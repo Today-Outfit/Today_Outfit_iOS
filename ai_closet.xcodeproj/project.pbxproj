@@ -77,6 +77,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		019FCA6F2AB882DF000239E5 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				019FCA692AB87A29000239E5 /* SurveyResultService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		019FCA702AB882FA000239E5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				019FCA6D2AB87A7B000239E5 /* SurveyResultModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		019FCA712AB8832B000239E5 /* VCs */ = {
+			isa = PBXGroup;
+			children = (
+				01AA9A132AA05B1200FB8355 /* LoginViewController.swift */,
+				01AA9A2D2AA074DC00FB8355 /* MainViewController.swift */,
+				013779492AB5AEE00055733F /* SurveySexViewController.swift */,
+				019FCA502AB81A2C000239E5 /* SurveyColorViewController.swift */,
+				019FCA522AB83769000239E5 /* SurveyPlaceViewController.swift */,
+				019FCA542AB838EF000239E5 /* LearningViewController.swift */,
+				019FCA562AB844BE000239E5 /* SegmentViewController.swift */,
+				019FCA582AB864D3000239E5 /* AvatarViewController.swift */,
+				019FCA5A2AB864EE000239E5 /* SegmentClothViewController.swift */,
+				019FCA602AB87613000239E5 /* SimilarClothViewController.swift */,
+				019FCA5C2AB8651C000239E5 /* MoreAvartarViewController.swift */,
+			);
+			path = VCs;
+			sourceTree = "<group>";
+		};
+		019FCA722AB88345000239E5 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				019FCA622AB8765C000239E5 /* SimilarClothCollectionViewCell.swift */,
+				019FCA5E2AB86672000239E5 /* SegmentClothCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		01AA9A032AA05B1200FB8355 = {
 			isa = PBXGroup;
 			children = (
@@ -96,21 +139,12 @@
 		01AA9A0E2AA05B1200FB8355 /* ai_closet */ = {
 			isa = PBXGroup;
 			children = (
+				019FCA722AB88345000239E5 /* Cells */,
+				019FCA712AB8832B000239E5 /* VCs */,
+				019FCA702AB882FA000239E5 /* Models */,
+				019FCA6F2AB882DF000239E5 /* Services */,
 				01AA9A0F2AA05B1200FB8355 /* AppDelegate.swift */,
 				01AA9A112AA05B1200FB8355 /* SceneDelegate.swift */,
-				01AA9A132AA05B1200FB8355 /* LoginViewController.swift */,
-				01AA9A2D2AA074DC00FB8355 /* MainViewController.swift */,
-				013779492AB5AEE00055733F /* SurveySexViewController.swift */,
-				019FCA502AB81A2C000239E5 /* SurveyColorViewController.swift */,
-				019FCA522AB83769000239E5 /* SurveyPlaceViewController.swift */,
-				019FCA542AB838EF000239E5 /* LearningViewController.swift */,
-				019FCA562AB844BE000239E5 /* SegmentViewController.swift */,
-				019FCA582AB864D3000239E5 /* AvatarViewController.swift */,
-				019FCA5A2AB864EE000239E5 /* SegmentClothViewController.swift */,
-				019FCA5E2AB86672000239E5 /* SegmentClothCollectionViewCell.swift */,
-				019FCA602AB87613000239E5 /* SimilarClothViewController.swift */,
-				019FCA622AB8765C000239E5 /* SimilarClothCollectionViewCell.swift */,
-				019FCA5C2AB8651C000239E5 /* MoreAvartarViewController.swift */,
 				01AA9A182AA05B1400FB8355 /* Assets.xcassets */,
 				01AA9A1A2AA05B1400FB8355 /* LaunchScreen.storyboard */,
 				01AA9A1D2AA05B1400FB8355 /* Info.plist */,
@@ -118,9 +152,7 @@
 				013779452AB449C90055733F /* UIColor+Extension.swift */,
 				013779472AB449E30055733F /* UITextField+Extension.swift */,
 				019FCA642AB879A5000239E5 /* APIContants.swift */,
-				019FCA692AB87A29000239E5 /* SurveyResultService.swift */,
 				019FCA6B2AB87A4F000239E5 /* NetworkResult.swift */,
-				019FCA6D2AB87A7B000239E5 /* SurveyResultModel.swift */,
 			);
 			path = ai_closet;
 			sourceTree = "<group>";
