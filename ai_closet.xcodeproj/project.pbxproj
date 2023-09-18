@@ -21,6 +21,11 @@
 		019FCA5F2AB86672000239E5 /* SegmentClothCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FCA5E2AB86672000239E5 /* SegmentClothCollectionViewCell.swift */; };
 		019FCA612AB87613000239E5 /* SimilarClothViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FCA602AB87613000239E5 /* SimilarClothViewController.swift */; };
 		019FCA632AB8765C000239E5 /* SimilarClothCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FCA622AB8765C000239E5 /* SimilarClothCollectionViewCell.swift */; };
+		019FCA652AB879A5000239E5 /* APIContants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FCA642AB879A5000239E5 /* APIContants.swift */; };
+		019FCA682AB879F9000239E5 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 019FCA672AB879F9000239E5 /* Alamofire */; };
+		019FCA6A2AB87A29000239E5 /* SurveyResultService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FCA692AB87A29000239E5 /* SurveyResultService.swift */; };
+		019FCA6C2AB87A4F000239E5 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FCA6B2AB87A4F000239E5 /* NetworkResult.swift */; };
+		019FCA6E2AB87A7B000239E5 /* SurveyResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FCA6D2AB87A7B000239E5 /* SurveyResultModel.swift */; };
 		01AA9A102AA05B1200FB8355 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AA9A0F2AA05B1200FB8355 /* AppDelegate.swift */; };
 		01AA9A122AA05B1200FB8355 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AA9A112AA05B1200FB8355 /* SceneDelegate.swift */; };
 		01AA9A142AA05B1200FB8355 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AA9A132AA05B1200FB8355 /* LoginViewController.swift */; };
@@ -45,6 +50,10 @@
 		019FCA5E2AB86672000239E5 /* SegmentClothCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentClothCollectionViewCell.swift; sourceTree = "<group>"; };
 		019FCA602AB87613000239E5 /* SimilarClothViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilarClothViewController.swift; sourceTree = "<group>"; };
 		019FCA622AB8765C000239E5 /* SimilarClothCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilarClothCollectionViewCell.swift; sourceTree = "<group>"; };
+		019FCA642AB879A5000239E5 /* APIContants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIContants.swift; sourceTree = "<group>"; };
+		019FCA692AB87A29000239E5 /* SurveyResultService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyResultService.swift; sourceTree = "<group>"; };
+		019FCA6B2AB87A4F000239E5 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
+		019FCA6D2AB87A7B000239E5 /* SurveyResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyResultModel.swift; sourceTree = "<group>"; };
 		01AA9A0C2AA05B1200FB8355 /* ai_closet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ai_closet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01AA9A0F2AA05B1200FB8355 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01AA9A112AA05B1200FB8355 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +70,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01AA9A2C2AA062C400FB8355 /* SnapKit in Frameworks */,
+				019FCA682AB879F9000239E5 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +117,10 @@
 				013779432AB449B20055733F /* InsetTextField.swift */,
 				013779452AB449C90055733F /* UIColor+Extension.swift */,
 				013779472AB449E30055733F /* UITextField+Extension.swift */,
+				019FCA642AB879A5000239E5 /* APIContants.swift */,
+				019FCA692AB87A29000239E5 /* SurveyResultService.swift */,
+				019FCA6B2AB87A4F000239E5 /* NetworkResult.swift */,
+				019FCA6D2AB87A7B000239E5 /* SurveyResultModel.swift */,
 			);
 			path = ai_closet;
 			sourceTree = "<group>";
@@ -129,6 +143,7 @@
 			name = ai_closet;
 			packageProductDependencies = (
 				01AA9A2B2AA062C400FB8355 /* SnapKit */,
+				019FCA672AB879F9000239E5 /* Alamofire */,
 			);
 			productName = ai_closet;
 			productReference = 01AA9A0C2AA05B1200FB8355 /* ai_closet.app */;
@@ -160,6 +175,7 @@
 			mainGroup = 01AA9A032AA05B1200FB8355;
 			packageReferences = (
 				01AA9A2A2AA062C400FB8355 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				019FCA662AB879F9000239E5 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 01AA9A0D2AA05B1200FB8355 /* Products */;
 			projectDirPath = "";
@@ -187,11 +203,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				019FCA652AB879A5000239E5 /* APIContants.swift in Sources */,
 				019FCA5B2AB864EE000239E5 /* SegmentClothViewController.swift in Sources */,
 				01AA9A2E2AA074DC00FB8355 /* MainViewController.swift in Sources */,
 				019FCA552AB838EF000239E5 /* LearningViewController.swift in Sources */,
 				019FCA5F2AB86672000239E5 /* SegmentClothCollectionViewCell.swift in Sources */,
 				013779442AB449B20055733F /* InsetTextField.swift in Sources */,
+				019FCA6C2AB87A4F000239E5 /* NetworkResult.swift in Sources */,
 				019FCA532AB83769000239E5 /* SurveyPlaceViewController.swift in Sources */,
 				019FCA612AB87613000239E5 /* SimilarClothViewController.swift in Sources */,
 				019FCA572AB844BE000239E5 /* SegmentViewController.swift in Sources */,
@@ -199,11 +217,13 @@
 				019FCA592AB864D3000239E5 /* AvatarViewController.swift in Sources */,
 				019FCA5D2AB8651C000239E5 /* MoreAvartarViewController.swift in Sources */,
 				013779482AB449E30055733F /* UITextField+Extension.swift in Sources */,
+				019FCA6E2AB87A7B000239E5 /* SurveyResultModel.swift in Sources */,
 				01AA9A142AA05B1200FB8355 /* LoginViewController.swift in Sources */,
 				019FCA632AB8765C000239E5 /* SimilarClothCollectionViewCell.swift in Sources */,
 				013779462AB449C90055733F /* UIColor+Extension.swift in Sources */,
 				01AA9A102AA05B1200FB8355 /* AppDelegate.swift in Sources */,
 				019FCA512AB81A2C000239E5 /* SurveyColorViewController.swift in Sources */,
+				019FCA6A2AB87A29000239E5 /* SurveyResultService.swift in Sources */,
 				01AA9A122AA05B1200FB8355 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,6 +434,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		019FCA662AB879F9000239E5 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		01AA9A2A2AA062C400FB8355 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
@@ -425,6 +453,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		019FCA672AB879F9000239E5 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 019FCA662AB879F9000239E5 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
 		01AA9A2B2AA062C400FB8355 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 01AA9A2A2AA062C400FB8355 /* XCRemoteSwiftPackageReference "SnapKit" */;

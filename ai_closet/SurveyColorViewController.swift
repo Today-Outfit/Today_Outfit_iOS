@@ -10,6 +10,9 @@ import UIKit
 
 class SurveyColorViewController: UIViewController {
     
+    var sex : String?
+    var color : String?
+    
     private let step_1: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -326,6 +329,7 @@ class SurveyColorViewController: UIViewController {
         redButton.backgroundColor = UIColor.white
         blackButton.backgroundColor = UIColor.white
         whiteButton.backgroundColor = UIColor.white
+        color = "파란색 계열"
     }
     @objc private func redButtonTapped() {
         redButton.backgroundColor = UIColor(r: 234, g: 243, b: 255)
@@ -333,6 +337,7 @@ class SurveyColorViewController: UIViewController {
         blueButton.backgroundColor = UIColor.white
         blackButton.backgroundColor = UIColor.white
         whiteButton.backgroundColor = UIColor.white
+        color = "빨간색 계열"
     }
     @objc private func blackButtonTapped() {
         blackButton.backgroundColor = UIColor(r: 234, g: 243, b: 255)
@@ -340,6 +345,7 @@ class SurveyColorViewController: UIViewController {
         blueButton.backgroundColor = UIColor.white
         redButton.backgroundColor = UIColor.white
         whiteButton.backgroundColor = UIColor.white
+        color = "검은색 계열"
     }
     @objc private func whiteButtonTapped() {
         whiteButton.backgroundColor = UIColor(r: 234, g: 243, b: 255)
@@ -347,9 +353,12 @@ class SurveyColorViewController: UIViewController {
         blueButton.backgroundColor = UIColor.white
         redButton.backgroundColor = UIColor.white
         blackButton.backgroundColor = UIColor.white
+        color = "흰색 계열"
     }
     @objc func onPressNextButton(sender: UIButton) {
         let surveyView_3 = SurveyPlaceViewController()
+        surveyView_3.sex = self.sex
+        surveyView_3.color = self.color
         self.navigationController?.pushViewController(surveyView_3, animated: true)
     }
 }

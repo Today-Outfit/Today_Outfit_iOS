@@ -10,6 +10,10 @@ import UIKit
 
 class SurveyPlaceViewController: UIViewController {
     
+    var sex : String?
+    var color : String?
+    var place : String?
+    
     private let step_1: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -312,44 +316,51 @@ class SurveyPlaceViewController: UIViewController {
             make.height.equalTo(48)
         }
         
-        formalityButton.addTarget(self, action: #selector(blueButtonTapped), for: .touchUpInside)
-        dateButton.addTarget(self, action: #selector(redButtonTapped), for: .touchUpInside)
-        comfyButton.addTarget(self, action: #selector(blackButtonTapped), for: .touchUpInside)
-        universityButton.addTarget(self, action: #selector(whiteButtonTapped), for: .touchUpInside)
+        formalityButton.addTarget(self, action: #selector(formalityButtonTapped), for: .touchUpInside)
+        dateButton.addTarget(self, action: #selector(dateButtonTapped), for: .touchUpInside)
+        comfyButton.addTarget(self, action: #selector(comfyButtonTapped), for: .touchUpInside)
+        universityButton.addTarget(self, action: #selector(universityButtonTapped), for: .touchUpInside)
         self.nextButton.addTarget(self, action: #selector(onPressNextButton), for: .touchUpInside)
         
     }
     
-    @objc private func blueButtonTapped() {
+    @objc private func formalityButtonTapped() {
         formalityButton.backgroundColor = UIColor(r: 234, g: 243, b: 255)
         // 다른 버튼의 배경색을 원래대로 되돌리고 싶다면 아래와 같이 처리할 수 있습니다.
         dateButton.backgroundColor = UIColor.white
         comfyButton.backgroundColor = UIColor.white
         universityButton.backgroundColor = UIColor.white
+        place = "격식있는 자리"
     }
-    @objc private func redButtonTapped() {
+    @objc private func dateButtonTapped() {
         dateButton.backgroundColor = UIColor(r: 234, g: 243, b: 255)
         // 다른 버튼의 배경색을 원래대로 되돌리고 싶다면 아래와 같이 처리할 수 있습니다.
         formalityButton.backgroundColor = UIColor.white
         comfyButton.backgroundColor = UIColor.white
         universityButton.backgroundColor = UIColor.white
+        place = "데이트"
     }
-    @objc private func blackButtonTapped() {
+    @objc private func comfyButtonTapped() {
         comfyButton.backgroundColor = UIColor(r: 234, g: 243, b: 255)
         // 다른 버튼의 배경색을 원래대로 되돌리고 싶다면 아래와 같이 처리할 수 있습니다.
         formalityButton.backgroundColor = UIColor.white
         dateButton.backgroundColor = UIColor.white
         universityButton.backgroundColor = UIColor.white
+        place = "편한 모임"
     }
-    @objc private func whiteButtonTapped() {
+    @objc private func universityButtonTapped() {
         universityButton.backgroundColor = UIColor(r: 234, g: 243, b: 255)
         // 다른 버튼의 배경색을 원래대로 되돌리고 싶다면 아래와 같이 처리할 수 있습니다.
         formalityButton.backgroundColor = UIColor.white
         dateButton.backgroundColor = UIColor.white
         comfyButton.backgroundColor = UIColor.white
+        place = "대학교"
     }
     @objc func onPressNextButton(sender: UIButton) {
         let learningView = LearningViewController()
+        print(sex)
+        print(color)
+        print(place)
         self.navigationController?.pushViewController(learningView, animated: true)
     }
 }

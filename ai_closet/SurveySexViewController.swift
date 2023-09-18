@@ -10,6 +10,8 @@ import UIKit
 
 class SurveySexViewController: UIViewController {
     
+    var sex : String = ""
+    
     private let step_1: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -275,6 +277,7 @@ class SurveySexViewController: UIViewController {
         manButton.backgroundColor = UIColor(r: 234, g: 243, b: 255)
         // 다른 버튼의 배경색을 원래대로 되돌리고 싶다면 아래와 같이 처리할 수 있습니다.
         womanButton.backgroundColor = UIColor.white
+        sex = "남자"
     }
     // manButton을 클릭했을 때 호출될 메서드
     @objc private func womanButtonTapped() {
@@ -282,9 +285,11 @@ class SurveySexViewController: UIViewController {
         womanButton.backgroundColor = UIColor(r: 234, g: 243, b: 255)
         // 다른 버튼의 배경색을 원래대로 되돌리고 싶다면 아래와 같이 처리할 수 있습니다.
         manButton.backgroundColor = UIColor.white
+        sex = "여자"
     }
     @objc func onPressNextButton(sender: UIButton) {
         let surveyView_2 = SurveyColorViewController()
+        surveyView_2.sex = self.sex
         self.navigationController?.pushViewController(surveyView_2, animated: true)
     }
 }
