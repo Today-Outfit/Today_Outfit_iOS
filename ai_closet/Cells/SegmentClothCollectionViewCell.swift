@@ -63,7 +63,7 @@ class SegmentClothCollectionViewCell: UICollectionViewCell {
         }
         
         purchaseButton.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(40)
+            make.top.equalToSuperview().offset(60)
             make.trailing.equalToSuperview().inset(20)
             make.width.equalTo(90)
             make.height.equalTo(30)

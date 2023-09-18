@@ -26,6 +26,7 @@
 		019FCA6A2AB87A29000239E5 /* SurveyResultService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FCA692AB87A29000239E5 /* SurveyResultService.swift */; };
 		019FCA6C2AB87A4F000239E5 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FCA6B2AB87A4F000239E5 /* NetworkResult.swift */; };
 		019FCA6E2AB87A7B000239E5 /* SurveyResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FCA6D2AB87A7B000239E5 /* SurveyResultModel.swift */; };
+		019FCA742AB8844F000239E5 /* DetailClothViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FCA732AB8844F000239E5 /* DetailClothViewController.swift */; };
 		01AA9A102AA05B1200FB8355 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AA9A0F2AA05B1200FB8355 /* AppDelegate.swift */; };
 		01AA9A122AA05B1200FB8355 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AA9A112AA05B1200FB8355 /* SceneDelegate.swift */; };
 		01AA9A142AA05B1200FB8355 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AA9A132AA05B1200FB8355 /* LoginViewController.swift */; };
@@ -54,6 +55,7 @@
 		019FCA692AB87A29000239E5 /* SurveyResultService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyResultService.swift; sourceTree = "<group>"; };
 		019FCA6B2AB87A4F000239E5 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
 		019FCA6D2AB87A7B000239E5 /* SurveyResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyResultModel.swift; sourceTree = "<group>"; };
+		019FCA732AB8844F000239E5 /* DetailClothViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailClothViewController.swift; sourceTree = "<group>"; };
 		01AA9A0C2AA05B1200FB8355 /* ai_closet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ai_closet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01AA9A0F2AA05B1200FB8355 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01AA9A112AA05B1200FB8355 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				019FCA582AB864D3000239E5 /* AvatarViewController.swift */,
 				019FCA5A2AB864EE000239E5 /* SegmentClothViewController.swift */,
 				019FCA602AB87613000239E5 /* SimilarClothViewController.swift */,
+				019FCA732AB8844F000239E5 /* DetailClothViewController.swift */,
 				019FCA5C2AB8651C000239E5 /* MoreAvartarViewController.swift */,
 			);
 			path = VCs;
@@ -249,6 +252,7 @@
 				019FCA592AB864D3000239E5 /* AvatarViewController.swift in Sources */,
 				019FCA5D2AB8651C000239E5 /* MoreAvartarViewController.swift in Sources */,
 				013779482AB449E30055733F /* UITextField+Extension.swift in Sources */,
+				019FCA742AB8844F000239E5 /* DetailClothViewController.swift in Sources */,
 				019FCA6E2AB87A7B000239E5 /* SurveyResultModel.swift in Sources */,
 				01AA9A142AA05B1200FB8355 /* LoginViewController.swift in Sources */,
 				019FCA632AB8765C000239E5 /* SimilarClothCollectionViewCell.swift in Sources */,

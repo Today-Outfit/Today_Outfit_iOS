@@ -27,6 +27,11 @@ class SimilarClothViewController: UIViewController, UICollectionViewDataSource, 
         super.viewDidLoad()
         view.backgroundColor = .white
         
+        // 뒤로가기 버튼에 있는 텍스트를 지우려면
+        let backButton = UIBarButtonItem()
+        backButton.title = ""
+        navigationItem.backBarButtonItem = backButton
+        
         // UICollectionView 설정
         similarClothCollecionView.dataSource = self
         similarClothCollecionView.delegate = self
@@ -51,9 +56,15 @@ class SimilarClothViewController: UIViewController, UICollectionViewDataSource, 
         cell.imageView.image = UIImage(named: "Avatar_test") // 이미지 파일 이름으로 변경
 
         // 텍스트 설정
-        cell.textLabel.text = "쉐기독 울 100% 라운드 가디건 BLUE"
+        cell.textLabel.text = "쉐기독 100% 라운드 가디건 BLUE"
 
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let detailViewController = DetailClothViewController() // 새로운 뷰컨트롤러 생성
+        
+        navigationController?.pushViewController(detailViewController, animated: true) // push
     }
     
     // 셀 크기 설정
