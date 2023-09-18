@@ -129,9 +129,10 @@ class LearningViewController: UIViewController {
         button.setTitle("결과보기", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .bold)
         button.setTitleColor(UIColor.white, for: .normal)
-        button.backgroundColor = UIColor(r: 0, g: 111, b: 253)
+        button.backgroundColor = UIColor(r: 135, g: 150, b: 170)
         button.layer.cornerRadius = 15
         button.clipsToBounds = true
+        button.isEnabled = false
         return button
     }()
     
@@ -155,11 +156,13 @@ class LearningViewController: UIViewController {
         }
         
         // 10초 후에 애니메이션 중지하고 이미지 뷰 추가
-        DispatchQueue.main.asyncAfter(deadline: .now() + 10) { [weak self] in
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) { [weak self] in
             self?.activityIndicator.stopAnimating()
             self?.activityIndicator.removeFromSuperview()
             self?.loadingLabel.isHidden = true
             self?.descriptionLabel.isHidden = true
+            self?.nextButton.isEnabled = true
+            self?.nextButton.backgroundColor = UIColor(r: 0, g: 111, b: 253)
             
             // 이미지 뷰 추가
             let imageView = UIImageView(image: UIImage(named: "complete"))

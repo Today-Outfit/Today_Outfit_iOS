@@ -15,6 +15,12 @@
 		019FCA532AB83769000239E5 /* SurveyPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FCA522AB83769000239E5 /* SurveyPlaceViewController.swift */; };
 		019FCA552AB838EF000239E5 /* LearningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FCA542AB838EF000239E5 /* LearningViewController.swift */; };
 		019FCA572AB844BE000239E5 /* SegmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FCA562AB844BE000239E5 /* SegmentViewController.swift */; };
+		019FCA592AB864D3000239E5 /* AvatarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FCA582AB864D3000239E5 /* AvatarViewController.swift */; };
+		019FCA5B2AB864EE000239E5 /* SegmentClothViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FCA5A2AB864EE000239E5 /* SegmentClothViewController.swift */; };
+		019FCA5D2AB8651C000239E5 /* MoreAvartarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FCA5C2AB8651C000239E5 /* MoreAvartarViewController.swift */; };
+		019FCA5F2AB86672000239E5 /* SegmentClothCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FCA5E2AB86672000239E5 /* SegmentClothCollectionViewCell.swift */; };
+		019FCA612AB87613000239E5 /* SimilarClothViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FCA602AB87613000239E5 /* SimilarClothViewController.swift */; };
+		019FCA632AB8765C000239E5 /* SimilarClothCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FCA622AB8765C000239E5 /* SimilarClothCollectionViewCell.swift */; };
 		01AA9A102AA05B1200FB8355 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AA9A0F2AA05B1200FB8355 /* AppDelegate.swift */; };
 		01AA9A122AA05B1200FB8355 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AA9A112AA05B1200FB8355 /* SceneDelegate.swift */; };
 		01AA9A142AA05B1200FB8355 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AA9A132AA05B1200FB8355 /* LoginViewController.swift */; };
@@ -33,6 +39,12 @@
 		019FCA522AB83769000239E5 /* SurveyPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyPlaceViewController.swift; sourceTree = "<group>"; };
 		019FCA542AB838EF000239E5 /* LearningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningViewController.swift; sourceTree = "<group>"; };
 		019FCA562AB844BE000239E5 /* SegmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentViewController.swift; sourceTree = "<group>"; };
+		019FCA582AB864D3000239E5 /* AvatarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarViewController.swift; sourceTree = "<group>"; };
+		019FCA5A2AB864EE000239E5 /* SegmentClothViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentClothViewController.swift; sourceTree = "<group>"; };
+		019FCA5C2AB8651C000239E5 /* MoreAvartarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreAvartarViewController.swift; sourceTree = "<group>"; };
+		019FCA5E2AB86672000239E5 /* SegmentClothCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentClothCollectionViewCell.swift; sourceTree = "<group>"; };
+		019FCA602AB87613000239E5 /* SimilarClothViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilarClothViewController.swift; sourceTree = "<group>"; };
+		019FCA622AB8765C000239E5 /* SimilarClothCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilarClothCollectionViewCell.swift; sourceTree = "<group>"; };
 		01AA9A0C2AA05B1200FB8355 /* ai_closet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ai_closet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01AA9A0F2AA05B1200FB8355 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01AA9A112AA05B1200FB8355 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +95,12 @@
 				019FCA522AB83769000239E5 /* SurveyPlaceViewController.swift */,
 				019FCA542AB838EF000239E5 /* LearningViewController.swift */,
 				019FCA562AB844BE000239E5 /* SegmentViewController.swift */,
+				019FCA582AB864D3000239E5 /* AvatarViewController.swift */,
+				019FCA5A2AB864EE000239E5 /* SegmentClothViewController.swift */,
+				019FCA5E2AB86672000239E5 /* SegmentClothCollectionViewCell.swift */,
+				019FCA602AB87613000239E5 /* SimilarClothViewController.swift */,
+				019FCA622AB8765C000239E5 /* SimilarClothCollectionViewCell.swift */,
+				019FCA5C2AB8651C000239E5 /* MoreAvartarViewController.swift */,
 				01AA9A182AA05B1400FB8355 /* Assets.xcassets */,
 				01AA9A1A2AA05B1400FB8355 /* LaunchScreen.storyboard */,
 				01AA9A1D2AA05B1400FB8355 /* Info.plist */,
@@ -169,14 +187,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				019FCA5B2AB864EE000239E5 /* SegmentClothViewController.swift in Sources */,
 				01AA9A2E2AA074DC00FB8355 /* MainViewController.swift in Sources */,
 				019FCA552AB838EF000239E5 /* LearningViewController.swift in Sources */,
+				019FCA5F2AB86672000239E5 /* SegmentClothCollectionViewCell.swift in Sources */,
 				013779442AB449B20055733F /* InsetTextField.swift in Sources */,
 				019FCA532AB83769000239E5 /* SurveyPlaceViewController.swift in Sources */,
+				019FCA612AB87613000239E5 /* SimilarClothViewController.swift in Sources */,
 				019FCA572AB844BE000239E5 /* SegmentViewController.swift in Sources */,
 				0137794A2AB5AEE00055733F /* SurveySexViewController.swift in Sources */,
+				019FCA592AB864D3000239E5 /* AvatarViewController.swift in Sources */,
+				019FCA5D2AB8651C000239E5 /* MoreAvartarViewController.swift in Sources */,
 				013779482AB449E30055733F /* UITextField+Extension.swift in Sources */,
 				01AA9A142AA05B1200FB8355 /* LoginViewController.swift in Sources */,
+				019FCA632AB8765C000239E5 /* SimilarClothCollectionViewCell.swift in Sources */,
 				013779462AB449C90055733F /* UIColor+Extension.swift in Sources */,
 				01AA9A102AA05B1200FB8355 /* AppDelegate.swift in Sources */,
 				019FCA512AB81A2C000239E5 /* SurveyColorViewController.swift in Sources */,

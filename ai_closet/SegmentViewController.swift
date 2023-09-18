@@ -7,8 +7,6 @@
 
 import Foundation
 import UIKit
-
-import UIKit
 import SnapKit
 
 class SegmentViewController: UIViewController {
@@ -32,9 +30,9 @@ class SegmentViewController: UIViewController {
 
     // Child View Controllers
     let viewControllers: [UIViewController] = [
-        FirstViewController(),
-        SecondViewController(),
-        ThirdViewController()
+        AvatarViewController(),
+        SegmentClothViewController(),
+        MoreAvatarViewController()
     ]
 
     override func viewDidLoad() {
@@ -89,26 +87,5 @@ class SegmentViewController: UIViewController {
             make.edges.equalToSuperview()
         }
         selectedViewController.didMove(toParent: self)
-    }
-}
-
-class FirstViewController: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .blue
-    }
-}
-
-class SecondViewController: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .green
-    }
-}
-
-class ThirdViewController: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .red
     }
 }
