@@ -9,9 +9,11 @@ import Foundation
 
 struct APIConstants {
     // MARK: -  Base URL
-    static let baseURL = "https://cazait.shop"
+    static let baseURL = "https://2862-14-39-88-198.ngrok.io"
     
     // MARK: - Feature URL
-    static let loginURL = baseURL + "/api/cafes/all" // 카페 전체 조회
+    static let surveyResultURL = baseURL + "/users"
+    
+    static let surveyResultURL_1 = baseURL + "/{남자}"
 }
 

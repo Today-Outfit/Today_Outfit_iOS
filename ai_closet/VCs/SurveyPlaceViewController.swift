@@ -13,6 +13,7 @@ class SurveyPlaceViewController: UIViewController {
     var sex : String?
     var color : String?
     var place : String?
+    var age : Int?
     
     private let step_1: UIImageView = {
         let imageView = UIImageView()
@@ -361,6 +362,27 @@ class SurveyPlaceViewController: UIViewController {
         print(sex)
         print(color)
         print(place)
+        surveyResult()
+        
+        
         self.navigationController?.pushViewController(learningView, animated: true)
+    }
+    func surveyResult() {
+        age = 5
+        surveyResultService.shared.surveyResult(gender: sex!, age: age!, atmosphere: place!, karlo_img: "dd", up: color!, bottom: color!) { response in
+            switch response {
+            case .success(let data):
+                guard let data = data as? SurveyResultResponse else { return }
+                print(data)
+            case .requestErr(let err):
+                print(err)
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            default:
+                print("networkFail")
+            }
+        }
     }
 }

@@ -9,25 +9,28 @@ import Foundation
 
 import Alamofire
 
-class loginService {
+class surveyResultService {
     
-    static let shared = loginService()
+    static let shared = surveyResultService()
 //(2)싱글통 객체를 선언해서 앱 어디에서든지 접근가능하도록 한다
     private init() {}
     
-    func login(accountName: String, password: String, completion: @escaping(NetworkResult<Any>) -> Void)
+    func surveyResult(gender: String, age: Int,atmosphere: String,karlo_img: String, up: String, bottom: String,completion: @escaping(NetworkResult<Any>) -> Void)
     {
-        let url = APIConstants.loginURL //통신할 API 주소
+        let url = APIConstants.surveyResultURL //통신할 API 주소
         
         //HTTP Headers : 요청 헤더
         let header : HTTPHeaders = ["Content-Type" : "application/json"]
         
         //요청 바디
         let body : Parameters = [
-            "accountName" : accountName,
-            "password" : password,
+            "gender" : gender,
+            "age" : age,
+            "atmosphere" : atmosphere,
+            "karlo_img" : karlo_img,
+            "up" : up,
+            "bottom" : bottom,
         ]
-        
         //요청서 //Request 생성
         //통신할 주소, HTTP메소드, 요청방식, 인코딩방식, 요청헤더
         let dataRequest = AF.request(url,
@@ -62,7 +65,7 @@ class loginService {
     //통신이 성공하고 원하는 데이터가 올바르게 들어왔을때 처리하는 함수
     private func isVaildData(data: Data) -> NetworkResult<Any> {
         let decoder = JSONDecoder() //서버에서 준 데이터를 Codable을 채택
-        guard let decodedData = try? decoder.decode(LoginResponse.self, from: data)
+        guard let decodedData = try? decoder.decode(SurveyResultResponse.self, from: data)
         //데이터가 변환이 되게끔 Response 모델 구조체로 데이터를 변환해서 넣고, 그 데이터를 NetworkResult Success 파라미터로 전달
         else { return .pathErr }
         
