@@ -10,6 +10,10 @@ import UIKit
 import SnapKit
 
 class SegmentViewController: UIViewController {
+    
+    var sex : String?
+    var color : String?
+    var place : String?
 
     // Segmented Control
     let segmentedControl: UISegmentedControl = {

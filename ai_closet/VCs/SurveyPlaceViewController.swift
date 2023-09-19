@@ -362,7 +362,11 @@ class SurveyPlaceViewController: UIViewController {
         print(sex)
         print(color)
         print(place)
-        surveyResult()
+//        surveyResult()
+        
+        learningView.sex = self.sex
+        learningView.color = self.color
+        learningView.place = self.place
         
         
         self.navigationController?.pushViewController(learningView, animated: true)
