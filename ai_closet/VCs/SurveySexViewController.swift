@@ -167,6 +167,9 @@ class SurveySexViewController: UIViewController {
         backButton.title = "Back"
         navigationItem.backBarButtonItem = backButton
         
+        // 현재 뷰 컨트롤러의 뒤로가기 버튼을 숨깁니다.
+        self.navigationItem.hidesBackButton = true
+        
         self.navigationItem.title = "오늘 뭐입지"
         // 탐색 표시줄의 제목 텍스트 속성 설정
         if let navigationBar = self.navigationController?.navigationBar {
