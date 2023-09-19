@@ -131,6 +131,15 @@ class SurveyPlaceViewController: UIViewController {
         return button
     }()
     
+    private let check_formality: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.image = UIImage(named: "check")
+        imageView.contentMode = .scaleAspectFit
+        imageView.isHidden = true
+        return imageView
+    }()
+    
     private let dateButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -147,6 +156,15 @@ class SurveyPlaceViewController: UIViewController {
         button.layer.borderColor = UIColor(r: 197, g: 198, b: 204).cgColor
         button.layer.borderWidth = 1
         return button
+    }()
+    
+    private let check_date: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.image = UIImage(named: "check")
+        imageView.contentMode = .scaleAspectFit
+        imageView.isHidden = true
+        return imageView
     }()
     
     private let comfyButton: UIButton = {
@@ -167,6 +185,15 @@ class SurveyPlaceViewController: UIViewController {
         return button
     }()
     
+    private let check_comfy: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.image = UIImage(named: "check")
+        imageView.contentMode = .scaleAspectFit
+        imageView.isHidden = true
+        return imageView
+    }()
+    
     private let universityButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -183,6 +210,15 @@ class SurveyPlaceViewController: UIViewController {
         button.layer.borderColor = UIColor(r: 197, g: 198, b: 204).cgColor
         button.layer.borderWidth = 1
         return button
+    }()
+    
+    private let check_university: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.image = UIImage(named: "check")
+        imageView.contentMode = .scaleAspectFit
+        imageView.isHidden = true
+        return imageView
     }()
     
     private let nextButton: UIButton = {
@@ -231,6 +267,10 @@ class SurveyPlaceViewController: UIViewController {
         self.view.addSubview(comfyButton)
         self.view.addSubview(universityButton)
         self.view.addSubview(nextButton)
+        self.view.addSubview(check_date)
+        self.view.addSubview(check_comfy)
+        self.view.addSubview(check_formality)
+        self.view.addSubview(check_university)
         
         step_1.snp.makeConstraints { make in
             make.leading.equalTo(self.view.safeAreaLayoutGuide.snp.leading).inset(50)
@@ -292,11 +332,23 @@ class SurveyPlaceViewController: UIViewController {
             make.top.equalTo(self.descriptionLabel.snp.bottom).offset(63)
             make.height.equalTo(50)
         }
+        check_formality.snp.makeConstraints { make in
+            make.trailing.equalTo(self.formalityButton.snp.trailing).inset(34)
+            make.top.equalTo(self.formalityButton.snp.top).offset(16)
+            make.height.equalTo(15)
+            make.width.equalTo(15)
+        }
         dateButton.snp.makeConstraints { make in
             make.leading.equalTo(self.view.safeAreaLayoutGuide.snp.leading).inset(34)
             make.trailing.equalTo(self.view.safeAreaLayoutGuide.snp.trailing).inset(34)
             make.top.equalTo(self.formalityButton.snp.bottom).offset(26)
             make.height.equalTo(50)
+        }
+        check_date.snp.makeConstraints { make in
+            make.trailing.equalTo(self.dateButton.snp.trailing).inset(34)
+            make.top.equalTo(self.dateButton.snp.top).offset(16)
+            make.height.equalTo(15)
+            make.width.equalTo(15)
         }
         comfyButton.snp.makeConstraints { make in
             make.leading.equalTo(self.view.safeAreaLayoutGuide.snp.leading).inset(34)
@@ -304,11 +356,23 @@ class SurveyPlaceViewController: UIViewController {
             make.top.equalTo(self.dateButton.snp.bottom).offset(26)
             make.height.equalTo(50)
         }
+        check_comfy.snp.makeConstraints { make in
+            make.trailing.equalTo(self.comfyButton.snp.trailing).inset(34)
+            make.top.equalTo(self.comfyButton.snp.top).offset(16)
+            make.height.equalTo(15)
+            make.width.equalTo(15)
+        }
         universityButton.snp.makeConstraints { make in
             make.leading.equalTo(self.view.safeAreaLayoutGuide.snp.leading).inset(34)
             make.trailing.equalTo(self.view.safeAreaLayoutGuide.snp.trailing).inset(34)
             make.top.equalTo(self.comfyButton.snp.bottom).offset(26)
             make.height.equalTo(50)
+        }
+        check_university.snp.makeConstraints { make in
+            make.trailing.equalTo(self.universityButton.snp.trailing).inset(34)
+            make.top.equalTo(self.universityButton.snp.top).offset(16)
+            make.height.equalTo(15)
+            make.width.equalTo(15)
         }
         self.nextButton.snp.makeConstraints { make in
             make.leading.equalTo(self.view.safeAreaLayoutGuide.snp.leading).inset(24)
@@ -331,6 +395,10 @@ class SurveyPlaceViewController: UIViewController {
         dateButton.backgroundColor = UIColor.white
         comfyButton.backgroundColor = UIColor.white
         universityButton.backgroundColor = UIColor.white
+        check_formality.isHidden = false
+        check_date.isHidden = true
+        check_comfy.isHidden = true
+        check_university.isHidden = true
         place = "격식있는 자리"
     }
     @objc private func dateButtonTapped() {
@@ -339,6 +407,10 @@ class SurveyPlaceViewController: UIViewController {
         formalityButton.backgroundColor = UIColor.white
         comfyButton.backgroundColor = UIColor.white
         universityButton.backgroundColor = UIColor.white
+        check_formality.isHidden = true
+        check_date.isHidden = false
+        check_comfy.isHidden = true
+        check_university.isHidden = true
         place = "데이트"
     }
     @objc private func comfyButtonTapped() {
@@ -347,6 +419,10 @@ class SurveyPlaceViewController: UIViewController {
         formalityButton.backgroundColor = UIColor.white
         dateButton.backgroundColor = UIColor.white
         universityButton.backgroundColor = UIColor.white
+        check_formality.isHidden = true
+        check_date.isHidden = true
+        check_comfy.isHidden = false
+        check_university.isHidden = true
         place = "편한 모임"
     }
     @objc private func universityButtonTapped() {
@@ -355,13 +431,15 @@ class SurveyPlaceViewController: UIViewController {
         formalityButton.backgroundColor = UIColor.white
         dateButton.backgroundColor = UIColor.white
         comfyButton.backgroundColor = UIColor.white
+        check_formality.isHidden = true
+        check_date.isHidden = true
+        check_comfy.isHidden = true
+        check_university.isHidden = false
         place = "대학교"
     }
     @objc func onPressNextButton(sender: UIButton) {
         let learningView = LearningViewController()
-        print(sex)
-        print(color)
-        print(place)
+        
 //        surveyResult()
         
         learningView.sex = self.sex

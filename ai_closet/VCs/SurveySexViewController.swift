@@ -128,6 +128,15 @@ class SurveySexViewController: UIViewController {
         return button
     }()
     
+    private let check_man: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.image = UIImage(named: "check")
+        imageView.contentMode = .scaleAspectFit
+        imageView.isHidden = true
+        return imageView
+    }()
+    
     private let womanButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -144,6 +153,15 @@ class SurveySexViewController: UIViewController {
         button.layer.borderColor = UIColor(r: 197, g: 198, b: 204).cgColor
         button.layer.borderWidth = 1
         return button
+    }()
+    
+    private let check_woman: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.image = UIImage(named: "check")
+        imageView.contentMode = .scaleAspectFit
+        imageView.isHidden = true
+        return imageView
     }()
     
     private let nextButton: UIButton = {
@@ -191,7 +209,9 @@ class SurveySexViewController: UIViewController {
         self.view.addSubview(mainLabel)
         self.view.addSubview(descriptionLabel)
         self.view.addSubview(manButton)
+        self.view.addSubview(check_man)
         self.view.addSubview(womanButton)
+        self.view.addSubview(check_woman)
         self.view.addSubview(nextButton)
         
         
@@ -255,11 +275,23 @@ class SurveySexViewController: UIViewController {
             make.top.equalTo(self.descriptionLabel.snp.bottom).offset(63)
             make.height.equalTo(50)
         }
+        check_man.snp.makeConstraints { make in
+            make.trailing.equalTo(self.manButton.snp.trailing).inset(34)
+            make.top.equalTo(self.manButton.snp.top).offset(16)
+            make.height.equalTo(15)
+            make.width.equalTo(15)
+        }
         womanButton.snp.makeConstraints { make in
             make.leading.equalTo(self.view.safeAreaLayoutGuide.snp.leading).inset(34)
             make.trailing.equalTo(self.view.safeAreaLayoutGuide.snp.trailing).inset(34)
             make.top.equalTo(self.manButton.snp.bottom).offset(26)
             make.height.equalTo(50)
+        }
+        check_woman.snp.makeConstraints { make in
+            make.trailing.equalTo(self.womanButton.snp.trailing).inset(34)
+            make.top.equalTo(self.womanButton.snp.top).offset(16)
+            make.height.equalTo(15)
+            make.width.equalTo(15)
         }
         self.nextButton.snp.makeConstraints { make in
             make.leading.equalTo(self.view.safeAreaLayoutGuide.snp.leading).inset(24)
@@ -280,6 +312,8 @@ class SurveySexViewController: UIViewController {
         manButton.backgroundColor = UIColor(r: 234, g: 243, b: 255)
         // 다른 버튼의 배경색을 원래대로 되돌리고 싶다면 아래와 같이 처리할 수 있습니다.
         womanButton.backgroundColor = UIColor.white
+        check_man.isHidden = false
+        check_woman.isHidden = true
         sex = "남자"
     }
     // manButton을 클릭했을 때 호출될 메서드
@@ -288,6 +322,8 @@ class SurveySexViewController: UIViewController {
         womanButton.backgroundColor = UIColor(r: 234, g: 243, b: 255)
         // 다른 버튼의 배경색을 원래대로 되돌리고 싶다면 아래와 같이 처리할 수 있습니다.
         manButton.backgroundColor = UIColor.white
+        check_man.isHidden = true
+        check_woman.isHidden = false
         sex = "여자"
     }
     @objc func onPressNextButton(sender: UIButton) {

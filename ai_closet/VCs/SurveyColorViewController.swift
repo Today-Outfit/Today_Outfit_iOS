@@ -129,6 +129,15 @@ class SurveyColorViewController: UIViewController {
         return button
     }()
     
+    private let check_blue: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.image = UIImage(named: "check")
+        imageView.contentMode = .scaleAspectFit
+        imageView.isHidden = true
+        return imageView
+    }()
+    
     private let redButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -145,6 +154,15 @@ class SurveyColorViewController: UIViewController {
         button.layer.borderColor = UIColor(r: 197, g: 198, b: 204).cgColor
         button.layer.borderWidth = 1
         return button
+    }()
+    
+    private let check_red: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.image = UIImage(named: "check")
+        imageView.contentMode = .scaleAspectFit
+        imageView.isHidden = true
+        return imageView
     }()
     
     private let blackButton: UIButton = {
@@ -165,6 +183,15 @@ class SurveyColorViewController: UIViewController {
         return button
     }()
     
+    private let check_black: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.image = UIImage(named: "check")
+        imageView.contentMode = .scaleAspectFit
+        imageView.isHidden = true
+        return imageView
+    }()
+    
     private let whiteButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -181,6 +208,15 @@ class SurveyColorViewController: UIViewController {
         button.layer.borderColor = UIColor(r: 197, g: 198, b: 204).cgColor
         button.layer.borderWidth = 1
         return button
+    }()
+    
+    private let check_white: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.image = UIImage(named: "check")
+        imageView.contentMode = .scaleAspectFit
+        imageView.isHidden = true
+        return imageView
     }()
     
     private let nextButton: UIButton = {
@@ -225,9 +261,13 @@ class SurveyColorViewController: UIViewController {
         self.view.addSubview(mainLabel)
         self.view.addSubview(descriptionLabel)
         self.view.addSubview(blueButton)
+        self.view.addSubview(check_blue)
         self.view.addSubview(redButton)
+        self.view.addSubview(check_red)
         self.view.addSubview(blackButton)
+        self.view.addSubview(check_black)
         self.view.addSubview(whiteButton)
+        self.view.addSubview(check_white)
         self.view.addSubview(nextButton)
         
         step_1.snp.makeConstraints { make in
@@ -290,11 +330,23 @@ class SurveyColorViewController: UIViewController {
             make.top.equalTo(self.descriptionLabel.snp.bottom).offset(63)
             make.height.equalTo(50)
         }
+        check_blue.snp.makeConstraints { make in
+            make.trailing.equalTo(self.blueButton.snp.trailing).inset(34)
+            make.top.equalTo(self.blueButton.snp.top).offset(16)
+            make.height.equalTo(15)
+            make.width.equalTo(15)
+        }
         redButton.snp.makeConstraints { make in
             make.leading.equalTo(self.view.safeAreaLayoutGuide.snp.leading).inset(34)
             make.trailing.equalTo(self.view.safeAreaLayoutGuide.snp.trailing).inset(34)
             make.top.equalTo(self.blueButton.snp.bottom).offset(26)
             make.height.equalTo(50)
+        }
+        check_red.snp.makeConstraints { make in
+            make.trailing.equalTo(self.redButton.snp.trailing).inset(34)
+            make.top.equalTo(self.redButton.snp.top).offset(16)
+            make.height.equalTo(15)
+            make.width.equalTo(15)
         }
         blackButton.snp.makeConstraints { make in
             make.leading.equalTo(self.view.safeAreaLayoutGuide.snp.leading).inset(34)
@@ -302,11 +354,23 @@ class SurveyColorViewController: UIViewController {
             make.top.equalTo(self.redButton.snp.bottom).offset(26)
             make.height.equalTo(50)
         }
+        check_black.snp.makeConstraints { make in
+            make.trailing.equalTo(self.blackButton.snp.trailing).inset(34)
+            make.top.equalTo(self.blackButton.snp.top).offset(16)
+            make.height.equalTo(15)
+            make.width.equalTo(15)
+        }
         whiteButton.snp.makeConstraints { make in
             make.leading.equalTo(self.view.safeAreaLayoutGuide.snp.leading).inset(34)
             make.trailing.equalTo(self.view.safeAreaLayoutGuide.snp.trailing).inset(34)
             make.top.equalTo(self.blackButton.snp.bottom).offset(26)
             make.height.equalTo(50)
+        }
+        check_white.snp.makeConstraints { make in
+            make.trailing.equalTo(self.whiteButton.snp.trailing).inset(34)
+            make.top.equalTo(self.whiteButton.snp.top).offset(16)
+            make.height.equalTo(15)
+            make.width.equalTo(15)
         }
         self.nextButton.snp.makeConstraints { make in
             make.leading.equalTo(self.view.safeAreaLayoutGuide.snp.leading).inset(24)
@@ -329,6 +393,10 @@ class SurveyColorViewController: UIViewController {
         redButton.backgroundColor = UIColor.white
         blackButton.backgroundColor = UIColor.white
         whiteButton.backgroundColor = UIColor.white
+        check_blue.isHidden = false
+        check_red.isHidden = true
+        check_black.isHidden = true
+        check_white.isHidden = true
         color = "파란색 계열"
     }
     @objc private func redButtonTapped() {
@@ -337,6 +405,10 @@ class SurveyColorViewController: UIViewController {
         blueButton.backgroundColor = UIColor.white
         blackButton.backgroundColor = UIColor.white
         whiteButton.backgroundColor = UIColor.white
+        check_blue.isHidden = true
+        check_red.isHidden = false
+        check_black.isHidden = true
+        check_white.isHidden = true
         color = "빨간색 계열"
     }
     @objc private func blackButtonTapped() {
@@ -345,6 +417,10 @@ class SurveyColorViewController: UIViewController {
         blueButton.backgroundColor = UIColor.white
         redButton.backgroundColor = UIColor.white
         whiteButton.backgroundColor = UIColor.white
+        check_blue.isHidden = true
+        check_red.isHidden = true
+        check_black.isHidden = false
+        check_white.isHidden = true
         color = "검은색 계열"
     }
     @objc private func whiteButtonTapped() {
@@ -353,6 +429,10 @@ class SurveyColorViewController: UIViewController {
         blueButton.backgroundColor = UIColor.white
         redButton.backgroundColor = UIColor.white
         blackButton.backgroundColor = UIColor.white
+        check_blue.isHidden = true
+        check_red.isHidden = true
+        check_black.isHidden = true
+        check_white.isHidden = false
         color = "흰색 계열"
     }
     @objc func onPressNextButton(sender: UIButton) {
