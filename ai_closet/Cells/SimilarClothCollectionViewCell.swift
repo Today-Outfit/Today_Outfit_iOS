@@ -15,7 +15,7 @@ class SimilarClothCollectionViewCell: UICollectionViewCell {
     // 이미지 뷰
     let imageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleToFill
         return imageView
     }()
     

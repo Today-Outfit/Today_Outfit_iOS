@@ -41,6 +41,9 @@ class SegmentViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // 현재 뷰 컨트롤러의 뒤로가기 버튼을 숨깁니다.
+        self.navigationItem.hidesBackButton = true
 
         setupUI()
     }

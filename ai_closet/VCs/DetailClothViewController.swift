@@ -85,6 +85,17 @@ class DetailClothViewController: UIViewController {
             make.height.equalTo(48)
         }
         
+        // purchaseButton에 액션 추가
+        purchaseButton.addTarget(self, action: #selector(openWebsite), for: .touchUpInside)
         
+    }
+    
+    // purchaseButton을 클릭했을 때 실행될 메서드
+    @objc func openWebsite() {
+        if let url = URL(string: "https://naver.com") { // 웹 사이트 주소를 여기에 입력하세요.
+            if UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
+        }
     }
 }
