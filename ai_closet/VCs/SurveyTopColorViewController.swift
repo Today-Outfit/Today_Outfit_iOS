@@ -8,10 +8,9 @@
 import Foundation
 import UIKit
 
-class SurveyColorViewController: UIViewController {
+class SurveyTopColorViewController: UIViewController {
     
-    var sex : String?
-    var color : String?
+    var color_1 : String?
     
     private let step_1: UIImageView = {
         let imageView = UIImageView()
@@ -95,7 +94,7 @@ class SurveyColorViewController: UIViewController {
         label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         label.textColor = .black
         label.textAlignment = .left
-        label.text = "평소에 좋아하는 색상을 선택하여주세요"
+        label.text = "평소에 좋아하는 상의 색상을 선택하여주세요"
         label.numberOfLines = 1
         return label
     }()
@@ -397,7 +396,7 @@ class SurveyColorViewController: UIViewController {
         check_red.isHidden = true
         check_black.isHidden = true
         check_white.isHidden = true
-        color = "파란색 계열"
+        color_1 = "파란색 계열"
     }
     @objc private func redButtonTapped() {
         redButton.backgroundColor = UIColor(r: 234, g: 243, b: 255)
@@ -409,7 +408,7 @@ class SurveyColorViewController: UIViewController {
         check_red.isHidden = false
         check_black.isHidden = true
         check_white.isHidden = true
-        color = "빨간색 계열"
+        color_1 = "빨간색 계열"
     }
     @objc private func blackButtonTapped() {
         blackButton.backgroundColor = UIColor(r: 234, g: 243, b: 255)
@@ -421,7 +420,7 @@ class SurveyColorViewController: UIViewController {
         check_red.isHidden = true
         check_black.isHidden = false
         check_white.isHidden = true
-        color = "검은색 계열"
+        color_1 = "검은색 계열"
     }
     @objc private func whiteButtonTapped() {
         whiteButton.backgroundColor = UIColor(r: 234, g: 243, b: 255)
@@ -433,12 +432,15 @@ class SurveyColorViewController: UIViewController {
         check_red.isHidden = true
         check_black.isHidden = true
         check_white.isHidden = false
-        color = "흰색 계열"
+        color_1 = "흰색 계열"
     }
     @objc func onPressNextButton(sender: UIButton) {
-        let surveyView_3 = SurveyPlaceViewController()
-        surveyView_3.sex = self.sex
-        surveyView_3.color = self.color
+        let surveyView_3 = SurveyPantsColorViewController()
+        UserDefaults.standard.set(self.color_1, forKey: "color_1")
+        let sex:String = UserDefaults.standard.object(forKey: "sex") as! String
+        print(sex)
+        let color_1:String = UserDefaults.standard.object(forKey: "color_1") as! String
+        print(color_1)
         self.navigationController?.pushViewController(surveyView_3, animated: true)
     }
 }

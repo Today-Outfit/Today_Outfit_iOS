@@ -11,9 +11,6 @@ import SnapKit
 
 class AvatarViewController: UIViewController {
     
-    let sex: String = UserDefaults.standard.object(forKey: "sex") as! String
-    let color: String = UserDefaults.standard.object(forKey: "color") as! String
-    let place: String = UserDefaults.standard.object(forKey: "color") as! String
     
     private let avatarImage: UIImageView = {
         let imageView = UIImageView()
@@ -30,16 +27,32 @@ class AvatarViewController: UIViewController {
         label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         label.textColor = .black
         label.textAlignment = .left
+        let sex = UserDefaults.standard.string(forKey: "sex")
+        label.text = sex
         label.numberOfLines = 1
         return label
     }()
     
-    private let colorLabel: UILabel = {
+    private let color_1Label: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         label.textColor = .black
         label.textAlignment = .left
+        let color_1 = UserDefaults.standard.string(forKey: "color_1")
+        label.text = color_1
+        label.numberOfLines = 1
+        return label
+    }()
+    
+    private let color_2Label: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+        label.textColor = .black
+        label.textAlignment = .left
+        let color_2 = UserDefaults.standard.string(forKey: "color_2")
+        label.text = color_2
         label.numberOfLines = 1
         return label
     }()
@@ -50,33 +63,38 @@ class AvatarViewController: UIViewController {
         label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         label.textColor = .black
         label.textAlignment = .left
+        let place = UserDefaults.standard.string(forKey: "place")
+        label.text = place
         label.numberOfLines = 1
         return label
     }()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         
-        // 다음 세 줄을 추가하여 UserDefaults에서 값을 가져와서 colorLabel의 text로 설정합니다.
-        if let colorValue = UserDefaults.standard.string(forKey: "color") {
-            colorLabel.text = colorValue
-        }
-        
-        // 다음 세 줄을 추가하여 UserDefaults에서 값을 가져와서 colorLabel의 text로 설정합니다.
-        if let sexValue = UserDefaults.standard.string(forKey: "sex") {
-            sexLabel.text = sexValue
-        }
-        
-        // 다음 세 줄을 추가하여 UserDefaults에서 값을 가져와서 colorLabel의 text로 설정합니다.
-        if let placeValue = UserDefaults.standard.string(forKey: "place") {
-            placeLabel.text = placeValue
-        }
+//        // 다음 세 줄을 추가하여 UserDefaults에서 값을 가져와서 colorLabel의 text로 설정합니다.
+//        if let color_1 = UserDefaults.standard.string(forKey: "color_1") {
+//            colorLabel.text = color_1
+//            print(color_1)
+//        }
+//
+//        // 다음 세 줄을 추가하여 UserDefaults에서 값을 가져와서 colorLabel의 text로 설정합니다.
+//        if let sex = UserDefaults.standard.string(forKey: "sex") {
+//            sexLabel.text = sex
+//            print(sex)
+//        }
+//
+//        // 다음 세 줄을 추가하여 UserDefaults에서 값을 가져와서 colorLabel의 text로 설정합니다.
+//        if let place = UserDefaults.standard.string(forKey: "place") {
+//            placeLabel.text = place
+//            print(place)
+//        }
         
         self.view.addSubview(avatarImage)
         self.view.addSubview(sexLabel)
-        self.view.addSubview(colorLabel)
+        self.view.addSubview(color_1Label)
+        self.view.addSubview(color_2Label)
         self.view.addSubview(placeLabel)
         
         
@@ -91,13 +109,17 @@ class AvatarViewController: UIViewController {
             make.leading.equalTo(self.view.snp.leading).inset(55)
             make.top.equalTo(self.avatarImage.snp.bottom).offset(30)
         }
-        colorLabel.snp.makeConstraints { make in
+        color_1Label.snp.makeConstraints { make in
             make.leading.equalTo(self.view.snp.leading).inset(55)
             make.top.equalTo(self.sexLabel.snp.bottom).offset(10)
         }
+        color_2Label.snp.makeConstraints { make in
+            make.leading.equalTo(self.view.snp.leading).inset(55)
+            make.top.equalTo(self.color_1Label.snp.bottom).offset(10)
+        }
         placeLabel.snp.makeConstraints { make in
             make.leading.equalTo(self.view.snp.leading).inset(55)
-            make.top.equalTo(self.colorLabel.snp.bottom).offset(10)
+            make.top.equalTo(self.color_2Label.snp.bottom).offset(10)
         }
         
     }

@@ -149,10 +149,6 @@ class LearningViewController: UIViewController {
         backButton.title = "Back"
         navigationItem.backBarButtonItem = backButton
         
-        UserDefaults.standard.set(self.sex, forKey: "sex")
-        UserDefaults.standard.set(self.color, forKey: "color")
-        UserDefaults.standard.set(self.place, forKey: "place")
-        
         self.navigationItem.title = "오늘 뭐입지"
         // 탐색 표시줄의 제목 텍스트 속성 설정
         if let navigationBar = self.navigationController?.navigationBar {

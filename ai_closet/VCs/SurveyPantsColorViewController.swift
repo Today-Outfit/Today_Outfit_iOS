@@ -1,21 +1,21 @@
 //
-//  SurveyViewController.swift
+//  SurveyColorViewController.swift
 //  ai_closet
 //
-//  Created by 강석호 on 2023/09/16.
+//  Created by 강석호 on 2023/09/18.
 //
 
 import Foundation
 import UIKit
 
-class SurveySexViewController: UIViewController {
+class SurveyPantsColorViewController: UIViewController {
     
-    var sex : String = ""
+    var color_2 : String?
     
     private let step_1: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(named: "selected_1")
+        imageView.image = UIImage(named: "checked_button")
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
@@ -34,7 +34,7 @@ class SurveySexViewController: UIViewController {
     private let step_2: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(named: "step_2")
+        imageView.image = UIImage(named: "selected_2")
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
@@ -94,7 +94,7 @@ class SurveySexViewController: UIViewController {
         label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         label.textColor = .black
         label.textAlignment = .left
-        label.text = "성별을 선택해주세요"
+        label.text = "평소에 좋아하는 하의 색상을 선택하여주세요"
         label.numberOfLines = 1
         return label
     }()
@@ -105,15 +105,15 @@ class SurveySexViewController: UIViewController {
         label.font = UIFont.systemFont(ofSize: 13, weight: .regular)
         label.textColor = UIColor(r: 113, g: 114, b: 122)
         label.textAlignment = .left
-        label.text = "성별에 경우, 모델의 성별을 학습할때 도움이 됩니다."
+        label.text = "색상에 경우, 선택하신 색상을 고려하여 학습을 진행합니다."
         label.numberOfLines = 1
         return label
     }()
     
-    private let manButton: UIButton = {
+    private let blueButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("남자", for: .normal)
+        button.setTitle("파란색 계열", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .regular)
         button.setTitleColor(UIColor.black, for: .normal) // 텍스트 색상을 검은색으로 변경
         button.backgroundColor = UIColor.white // 배경색을 하얀색으로 변경
@@ -128,7 +128,7 @@ class SurveySexViewController: UIViewController {
         return button
     }()
     
-    private let check_man: UIImageView = {
+    private let check_blue: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = UIImage(named: "check")
@@ -137,10 +137,10 @@ class SurveySexViewController: UIViewController {
         return imageView
     }()
     
-    private let womanButton: UIButton = {
+    private let redButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("여자", for: .normal)
+        button.setTitle("빨간색 계열", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .regular)
         button.setTitleColor(UIColor.black, for: .normal) // 텍스트 색상을 검은색으로 변경
         button.backgroundColor = UIColor.white // 배경색을 하얀색으로 변경
@@ -155,7 +155,61 @@ class SurveySexViewController: UIViewController {
         return button
     }()
     
-    private let check_woman: UIImageView = {
+    private let check_red: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.image = UIImage(named: "check")
+        imageView.contentMode = .scaleAspectFit
+        imageView.isHidden = true
+        return imageView
+    }()
+    
+    private let blackButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("검은색 계열", for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .regular)
+        button.setTitleColor(UIColor.black, for: .normal) // 텍스트 색상을 검은색으로 변경
+        button.backgroundColor = UIColor.white // 배경색을 하얀색으로 변경
+        button.layer.cornerRadius = 15
+        button.clipsToBounds = true
+        // 텍스트 왼쪽 정렬 설정
+        button.contentHorizontalAlignment = .left
+        button.contentEdgeInsets = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 0)
+        // 테두리 설정
+        button.layer.borderColor = UIColor(r: 197, g: 198, b: 204).cgColor
+        button.layer.borderWidth = 1
+        return button
+    }()
+    
+    private let check_black: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.image = UIImage(named: "check")
+        imageView.contentMode = .scaleAspectFit
+        imageView.isHidden = true
+        return imageView
+    }()
+    
+    private let whiteButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("흰색 계열", for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .regular)
+        button.setTitleColor(UIColor.black, for: .normal) // 텍스트 색상을 검은색으로 변경
+        button.backgroundColor = UIColor.white // 배경색을 하얀색으로 변경
+        button.layer.cornerRadius = 15
+        button.clipsToBounds = true
+        // 텍스트 왼쪽 정렬 설정
+        button.contentHorizontalAlignment = .left
+        button.contentEdgeInsets = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 0)
+        // 테두리 설정
+        button.layer.borderColor = UIColor(r: 197, g: 198, b: 204).cgColor
+        button.layer.borderWidth = 1
+        return button
+    }()
+    
+    private let check_white: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = UIImage(named: "check")
@@ -185,9 +239,6 @@ class SurveySexViewController: UIViewController {
         backButton.title = "Back"
         navigationItem.backBarButtonItem = backButton
         
-        // 현재 뷰 컨트롤러의 뒤로가기 버튼을 숨깁니다.
-        self.navigationItem.hidesBackButton = true
-        
         self.navigationItem.title = "오늘 뭐입지"
         // 탐색 표시줄의 제목 텍스트 속성 설정
         if let navigationBar = self.navigationController?.navigationBar {
@@ -208,12 +259,15 @@ class SurveySexViewController: UIViewController {
         self.view.addSubview(step_4_Label)
         self.view.addSubview(mainLabel)
         self.view.addSubview(descriptionLabel)
-        self.view.addSubview(manButton)
-        self.view.addSubview(check_man)
-        self.view.addSubview(womanButton)
-        self.view.addSubview(check_woman)
+        self.view.addSubview(blueButton)
+        self.view.addSubview(check_blue)
+        self.view.addSubview(redButton)
+        self.view.addSubview(check_red)
+        self.view.addSubview(blackButton)
+        self.view.addSubview(check_black)
+        self.view.addSubview(whiteButton)
+        self.view.addSubview(check_white)
         self.view.addSubview(nextButton)
-        
         
         step_1.snp.makeConstraints { make in
             make.leading.equalTo(self.view.safeAreaLayoutGuide.snp.leading).inset(50)
@@ -269,27 +323,51 @@ class SurveySexViewController: UIViewController {
             make.leading.equalTo(self.view.safeAreaLayoutGuide.snp.leading).inset(34)
             make.top.equalTo(self.mainLabel.snp.bottom).offset(10)
         }
-        manButton.snp.makeConstraints { make in
+        blueButton.snp.makeConstraints { make in
             make.leading.equalTo(self.view.safeAreaLayoutGuide.snp.leading).inset(34)
             make.trailing.equalTo(self.view.safeAreaLayoutGuide.snp.trailing).inset(34)
             make.top.equalTo(self.descriptionLabel.snp.bottom).offset(63)
             make.height.equalTo(50)
         }
-        check_man.snp.makeConstraints { make in
-            make.trailing.equalTo(self.manButton.snp.trailing).inset(34)
-            make.top.equalTo(self.manButton.snp.top).offset(16)
+        check_blue.snp.makeConstraints { make in
+            make.trailing.equalTo(self.blueButton.snp.trailing).inset(34)
+            make.top.equalTo(self.blueButton.snp.top).offset(16)
             make.height.equalTo(15)
             make.width.equalTo(15)
         }
-        womanButton.snp.makeConstraints { make in
+        redButton.snp.makeConstraints { make in
             make.leading.equalTo(self.view.safeAreaLayoutGuide.snp.leading).inset(34)
             make.trailing.equalTo(self.view.safeAreaLayoutGuide.snp.trailing).inset(34)
-            make.top.equalTo(self.manButton.snp.bottom).offset(26)
+            make.top.equalTo(self.blueButton.snp.bottom).offset(26)
             make.height.equalTo(50)
         }
-        check_woman.snp.makeConstraints { make in
-            make.trailing.equalTo(self.womanButton.snp.trailing).inset(34)
-            make.top.equalTo(self.womanButton.snp.top).offset(16)
+        check_red.snp.makeConstraints { make in
+            make.trailing.equalTo(self.redButton.snp.trailing).inset(34)
+            make.top.equalTo(self.redButton.snp.top).offset(16)
+            make.height.equalTo(15)
+            make.width.equalTo(15)
+        }
+        blackButton.snp.makeConstraints { make in
+            make.leading.equalTo(self.view.safeAreaLayoutGuide.snp.leading).inset(34)
+            make.trailing.equalTo(self.view.safeAreaLayoutGuide.snp.trailing).inset(34)
+            make.top.equalTo(self.redButton.snp.bottom).offset(26)
+            make.height.equalTo(50)
+        }
+        check_black.snp.makeConstraints { make in
+            make.trailing.equalTo(self.blackButton.snp.trailing).inset(34)
+            make.top.equalTo(self.blackButton.snp.top).offset(16)
+            make.height.equalTo(15)
+            make.width.equalTo(15)
+        }
+        whiteButton.snp.makeConstraints { make in
+            make.leading.equalTo(self.view.safeAreaLayoutGuide.snp.leading).inset(34)
+            make.trailing.equalTo(self.view.safeAreaLayoutGuide.snp.trailing).inset(34)
+            make.top.equalTo(self.blackButton.snp.bottom).offset(26)
+            make.height.equalTo(50)
+        }
+        check_white.snp.makeConstraints { make in
+            make.trailing.equalTo(self.whiteButton.snp.trailing).inset(34)
+            make.top.equalTo(self.whiteButton.snp.top).offset(16)
             make.height.equalTo(15)
             make.width.equalTo(15)
         }
@@ -300,37 +378,71 @@ class SurveySexViewController: UIViewController {
             make.height.equalTo(48)
         }
         
-        manButton.addTarget(self, action: #selector(manButtonTapped), for: .touchUpInside)
-        womanButton.addTarget(self, action: #selector(womanButtonTapped), for: .touchUpInside)
-        // 로그인하기 버튼 클릭시 다음화면으로 이동
+        blueButton.addTarget(self, action: #selector(blueButtonTapped), for: .touchUpInside)
+        redButton.addTarget(self, action: #selector(redButtonTapped), for: .touchUpInside)
+        blackButton.addTarget(self, action: #selector(blackButtonTapped), for: .touchUpInside)
+        whiteButton.addTarget(self, action: #selector(whiteButtonTapped), for: .touchUpInside)
         self.nextButton.addTarget(self, action: #selector(onPressNextButton), for: .touchUpInside)
+        
     }
-    
-    // manButton을 클릭했을 때 호출될 메서드
-    @objc private func manButtonTapped() {
-        // 버튼의 배경색을 파란색으로 변경
-        manButton.backgroundColor = UIColor(r: 234, g: 243, b: 255)
+
+    @objc private func blueButtonTapped() {
+        blueButton.backgroundColor = UIColor(r: 234, g: 243, b: 255)
         // 다른 버튼의 배경색을 원래대로 되돌리고 싶다면 아래와 같이 처리할 수 있습니다.
-        womanButton.backgroundColor = UIColor.white
-        check_man.isHidden = false
-        check_woman.isHidden = true
-        sex = "남자"
+        redButton.backgroundColor = UIColor.white
+        blackButton.backgroundColor = UIColor.white
+        whiteButton.backgroundColor = UIColor.white
+        check_blue.isHidden = false
+        check_red.isHidden = true
+        check_black.isHidden = true
+        check_white.isHidden = true
+        color_2 = "파란색 계열"
     }
-    // manButton을 클릭했을 때 호출될 메서드
-    @objc private func womanButtonTapped() {
-        // 버튼의 배경색을 파란색으로 변경
-        womanButton.backgroundColor = UIColor(r: 234, g: 243, b: 255)
+    @objc private func redButtonTapped() {
+        redButton.backgroundColor = UIColor(r: 234, g: 243, b: 255)
         // 다른 버튼의 배경색을 원래대로 되돌리고 싶다면 아래와 같이 처리할 수 있습니다.
-        manButton.backgroundColor = UIColor.white
-        check_man.isHidden = true
-        check_woman.isHidden = false
-        sex = "여자"
+        blueButton.backgroundColor = UIColor.white
+        blackButton.backgroundColor = UIColor.white
+        whiteButton.backgroundColor = UIColor.white
+        check_blue.isHidden = true
+        check_red.isHidden = false
+        check_black.isHidden = true
+        check_white.isHidden = true
+        color_2 = "빨간색 계열"
+    }
+    @objc private func blackButtonTapped() {
+        blackButton.backgroundColor = UIColor(r: 234, g: 243, b: 255)
+        // 다른 버튼의 배경색을 원래대로 되돌리고 싶다면 아래와 같이 처리할 수 있습니다.
+        blueButton.backgroundColor = UIColor.white
+        redButton.backgroundColor = UIColor.white
+        whiteButton.backgroundColor = UIColor.white
+        check_blue.isHidden = true
+        check_red.isHidden = true
+        check_black.isHidden = false
+        check_white.isHidden = true
+        color_2 = "검은색 계열"
+    }
+    @objc private func whiteButtonTapped() {
+        whiteButton.backgroundColor = UIColor(r: 234, g: 243, b: 255)
+        // 다른 버튼의 배경색을 원래대로 되돌리고 싶다면 아래와 같이 처리할 수 있습니다.
+        blueButton.backgroundColor = UIColor.white
+        redButton.backgroundColor = UIColor.white
+        blackButton.backgroundColor = UIColor.white
+        check_blue.isHidden = true
+        check_red.isHidden = true
+        check_black.isHidden = true
+        check_white.isHidden = false
+        color_2 = "흰색 계열"
     }
     @objc func onPressNextButton(sender: UIButton) {
-        let surveyView_2 = SurveyTopColorViewController()
-        UserDefaults.standard.set(self.sex, forKey: "sex")
+        let surveyView_4 = SurveyPlaceViewController()
+        UserDefaults.standard.set(self.color_2, forKey: "color_2")
         let sex:String = UserDefaults.standard.object(forKey: "sex") as! String
         print(sex)
-        self.navigationController?.pushViewController(surveyView_2, animated: true)
+        let color_1:String = UserDefaults.standard.object(forKey: "color_1") as! String
+        print(color_1)
+        let color_2:String = UserDefaults.standard.object(forKey: "color_2") as! String
+        print(color_2)
+        self.navigationController?.pushViewController(surveyView_4, animated: true)
     }
 }

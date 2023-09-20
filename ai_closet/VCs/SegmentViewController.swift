@@ -11,10 +11,6 @@ import SnapKit
 
 class SegmentViewController: UIViewController {
     
-    var sex : String?
-    var color : String?
-    var place : String?
-
     // Segmented Control
     let segmentedControl: UISegmentedControl = {
         let items = ["아바타 코디", "분리된 옷", "그 외 코디"]

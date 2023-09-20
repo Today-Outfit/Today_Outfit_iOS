@@ -11,7 +11,7 @@
 		013779462AB449C90055733F /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013779452AB449C90055733F /* UIColor+Extension.swift */; };
 		013779482AB449E30055733F /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013779472AB449E30055733F /* UITextField+Extension.swift */; };
 		0137794A2AB5AEE00055733F /* SurveySexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013779492AB5AEE00055733F /* SurveySexViewController.swift */; };
-		019FCA512AB81A2C000239E5 /* SurveyColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FCA502AB81A2C000239E5 /* SurveyColorViewController.swift */; };
+		019FCA512AB81A2C000239E5 /* SurveyTopColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FCA502AB81A2C000239E5 /* SurveyTopColorViewController.swift */; };
 		019FCA532AB83769000239E5 /* SurveyPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FCA522AB83769000239E5 /* SurveyPlaceViewController.swift */; };
 		019FCA552AB838EF000239E5 /* LearningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FCA542AB838EF000239E5 /* LearningViewController.swift */; };
 		019FCA572AB844BE000239E5 /* SegmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FCA562AB844BE000239E5 /* SegmentViewController.swift */; };
@@ -27,6 +27,7 @@
 		019FCA6C2AB87A4F000239E5 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FCA6B2AB87A4F000239E5 /* NetworkResult.swift */; };
 		019FCA6E2AB87A7B000239E5 /* SurveyResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FCA6D2AB87A7B000239E5 /* SurveyResultModel.swift */; };
 		019FCA742AB8844F000239E5 /* DetailClothViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FCA732AB8844F000239E5 /* DetailClothViewController.swift */; };
+		019FCA762ABB25EE000239E5 /* SurveyPantsColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FCA752ABB25EE000239E5 /* SurveyPantsColorViewController.swift */; };
 		01AA9A102AA05B1200FB8355 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AA9A0F2AA05B1200FB8355 /* AppDelegate.swift */; };
 		01AA9A122AA05B1200FB8355 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AA9A112AA05B1200FB8355 /* SceneDelegate.swift */; };
 		01AA9A142AA05B1200FB8355 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AA9A132AA05B1200FB8355 /* LoginViewController.swift */; };
@@ -41,7 +42,7 @@
 		013779452AB449C90055733F /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		013779472AB449E30055733F /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		013779492AB5AEE00055733F /* SurveySexViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveySexViewController.swift; sourceTree = "<group>"; };
-		019FCA502AB81A2C000239E5 /* SurveyColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyColorViewController.swift; sourceTree = "<group>"; };
+		019FCA502AB81A2C000239E5 /* SurveyTopColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyTopColorViewController.swift; sourceTree = "<group>"; };
 		019FCA522AB83769000239E5 /* SurveyPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyPlaceViewController.swift; sourceTree = "<group>"; };
 		019FCA542AB838EF000239E5 /* LearningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningViewController.swift; sourceTree = "<group>"; };
 		019FCA562AB844BE000239E5 /* SegmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +57,7 @@
 		019FCA6B2AB87A4F000239E5 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
 		019FCA6D2AB87A7B000239E5 /* SurveyResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyResultModel.swift; sourceTree = "<group>"; };
 		019FCA732AB8844F000239E5 /* DetailClothViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailClothViewController.swift; sourceTree = "<group>"; };
+		019FCA752ABB25EE000239E5 /* SurveyPantsColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyPantsColorViewController.swift; sourceTree = "<group>"; };
 		01AA9A0C2AA05B1200FB8355 /* ai_closet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ai_closet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01AA9A0F2AA05B1200FB8355 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01AA9A112AA05B1200FB8355 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,7 +103,8 @@
 				01AA9A132AA05B1200FB8355 /* LoginViewController.swift */,
 				01AA9A2D2AA074DC00FB8355 /* MainViewController.swift */,
 				013779492AB5AEE00055733F /* SurveySexViewController.swift */,
-				019FCA502AB81A2C000239E5 /* SurveyColorViewController.swift */,
+				019FCA502AB81A2C000239E5 /* SurveyTopColorViewController.swift */,
+				019FCA752ABB25EE000239E5 /* SurveyPantsColorViewController.swift */,
 				019FCA522AB83769000239E5 /* SurveyPlaceViewController.swift */,
 				019FCA542AB838EF000239E5 /* LearningViewController.swift */,
 				019FCA562AB844BE000239E5 /* SegmentViewController.swift */,
@@ -255,10 +258,11 @@
 				019FCA742AB8844F000239E5 /* DetailClothViewController.swift in Sources */,
 				019FCA6E2AB87A7B000239E5 /* SurveyResultModel.swift in Sources */,
 				01AA9A142AA05B1200FB8355 /* LoginViewController.swift in Sources */,
+				019FCA762ABB25EE000239E5 /* SurveyPantsColorViewController.swift in Sources */,
 				019FCA632AB8765C000239E5 /* SimilarClothCollectionViewCell.swift in Sources */,
 				013779462AB449C90055733F /* UIColor+Extension.swift in Sources */,
 				01AA9A102AA05B1200FB8355 /* AppDelegate.swift in Sources */,
-				019FCA512AB81A2C000239E5 /* SurveyColorViewController.swift in Sources */,
+				019FCA512AB81A2C000239E5 /* SurveyTopColorViewController.swift in Sources */,
 				019FCA6A2AB87A29000239E5 /* SurveyResultService.swift in Sources */,
 				01AA9A122AA05B1200FB8355 /* SceneDelegate.swift in Sources */,
 			);

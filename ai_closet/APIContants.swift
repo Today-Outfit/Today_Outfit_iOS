@@ -9,7 +9,7 @@ import Foundation
 
 struct APIConstants {
     // MARK: -  Base URL
-    static let baseURL = "https://2862-14-39-88-198.ngrok.io"
+    static let baseURL = "https://c12f-115-91-214-23.ngrok.io"
     
     // MARK: - Feature URL
     static let surveyResultURL = baseURL + "/users"

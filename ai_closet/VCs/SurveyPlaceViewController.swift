@@ -10,10 +10,7 @@ import UIKit
 
 class SurveyPlaceViewController: UIViewController {
     
-    var sex : String?
-    var color : String?
     var place : String?
-    var age : Int?
     
     private let step_1: UIImageView = {
         let imageView = UIImageView()
@@ -437,25 +434,34 @@ class SurveyPlaceViewController: UIViewController {
         check_university.isHidden = false
         place = "대학교"
     }
+    
     @objc func onPressNextButton(sender: UIButton) {
         let learningView = LearningViewController()
-        
-//        surveyResult()
-        
-        learningView.sex = self.sex
-        learningView.color = self.color
-        learningView.place = self.place
-        
-        
+        UserDefaults.standard.set(self.place, forKey: "place")
+        let sex:String = UserDefaults.standard.object(forKey: "sex") as! String
+        print(sex)
+        let color_1:String = UserDefaults.standard.object(forKey: "color_1") as! String
+        print(color_1)
+        let color_2:String = UserDefaults.standard.object(forKey: "color_2") as! String
+        print(color_2)
+        let place:String = UserDefaults.standard.object(forKey: "place") as! String
+        print(place)
         self.navigationController?.pushViewController(learningView, animated: true)
+        
+        surveyResult()
     }
+    
     func surveyResult() {
-        age = 5
-        surveyResultService.shared.surveyResult(gender: sex!, age: age!, atmosphere: place!, karlo_img: "dd", up: color!, bottom: color!) { response in
+        let gender: String = UserDefaults.standard.object(forKey: "sex") as! String
+        let color_1: String = UserDefaults.standard.object(forKey: "color_1") as! String
+        let color_2: String = UserDefaults.standard.object(forKey: "color_2") as! String
+        let Place: String = UserDefaults.standard.object(forKey: "place") as! String
+        surveyResultService.shared.surveyResult(gender: gender, age: 25, atmosphere: Place, karlo_img: "ddddd", up: color_1, bottom: color_2) { response in
             switch response {
             case .success(let data):
                 guard let data = data as? SurveyResultResponse else { return }
                 print(data)
+                print("Success!!")
             case .requestErr(let err):
                 print(err)
             case .pathErr:

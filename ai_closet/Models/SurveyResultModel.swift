@@ -8,23 +8,25 @@
 import Foundation
 
 
+//struct SurveyResultResponse: Codable {
+//    let gender: String
+//    let age: Int
+//    let atmosphere: String
+//    let karlo_img: String
+//    let up: String
+//    let bottom: String
+//}
+
+
+
+// MARK: - WelcomeElement
 struct SurveyResultResponse: Codable {
-//    let data: LoginData?
-//    let message: String
-//    let result: String
-    
-    let gender: String
-    let age: Int
-    let atmosphere: String
-    let karlo_img: String
-    let up: String
-    let bottom: String
+    let gender: String?
+    let age: Int?
+    let atmosphere: String?
+    let karloImg: String?
+    let up: String?
+    let bottom: String?
 }
 
-//struct LoginData: Codable {
-//    let accountName: String
-//    let id: String
-//    let accessToken: String
-//    let refreshToken: String
-//    let role: String
-//}
+typealias SurveyResult = [SurveyResultResponse]
