@@ -16,8 +16,9 @@ class SegmentViewController: UIViewController {
         let items = ["아바타 코디", "분리된 옷", "그 외 코디"]
         let control = UISegmentedControl(items: items)
         control.selectedSegmentIndex = 0
-        control.backgroundColor = .white
-        control.tintColor = .white // 배경색과 동일한 색상으로 설정
+        control.backgroundColor = .gray
+        control.tintColor = .black // 배경색과 동일한 색상으로 설정
+        control.selectedSegmentTintColor = .black
         return control
     }()
 
@@ -37,6 +38,8 @@ class SegmentViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "오늘 뭐입지"
+        self.navigationController?.navigationBar.backgroundColor = .white
         
         // 현재 뷰 컨트롤러의 뒤로가기 버튼을 숨깁니다.
         self.navigationItem.hidesBackButton = true
